@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-SAT.UI.MVC-DA252B47-1DB6-45B3-9C51-96B2271E6704</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\ContactUs\**" />
+    <Content Remove="Views\ContactUs\**" />
+    <EmbeddedResource Remove="Views\ContactUs\**" />
+    <None Remove="Views\ContactUs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Administration\CreateRole.cshtml" />
+    <None Include="Views\Administration\EditRole.cshtml" />
+    <None Include="Views\Administration\EditUser.cshtml" />
+    <None Include="Views\Administration\EditUserRoles.cshtml" />
+    <None Include="Views\Administration\EditUsersInRole.cshtml" />
+    <None Include="Views\Administration\ListRoles.cshtml" />
+    <None Include="Views\Administration\ListUsers.cshtml" />
+    <None Include="wwwroot\index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
+    <PackageReference Include="NETCore.MailKit" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SAT.DATA.EF\SAT.DATA.EF.csproj" />
+  </ItemGroup>
+
+</Project>
