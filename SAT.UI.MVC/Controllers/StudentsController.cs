@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using SAT.UI.MVC.Models;
+//using SAT.UI.MVC.Models;
+using SAT.DATA.EF.Models;
 
 namespace SAT.UI.MVC.Controllers
 {
@@ -21,8 +22,8 @@ namespace SAT.UI.MVC.Controllers
         // GET: Students
         public async Task<IActionResult> Index()
         {
-            var sATContext = _context.Students.Include(s => s.Ss);
-            return View(await sATContext.ToListAsync());
+            var SATContext = _context.Students.Include(s => s.Ss);
+            return View(await SATContext.ToListAsync());
         }
 
         // GET: Students/Details/5
