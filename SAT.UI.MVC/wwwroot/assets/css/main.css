@@ -9,6 +9,7 @@ metisAdmin: Base
 ========================================================================== */
 body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  flex: 1;
 }
 /*********************************************************/
 /*                 Layout Styles                         */
@@ -26,11 +27,14 @@ body {
 }
 .Footer,
 #footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 48px;
+    text-align: center;
+    display:flex;
+    flex-direction:column;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 48px;
 }
 /* END Sticky footer styles
    ========================================================================== */
