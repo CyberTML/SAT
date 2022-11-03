@@ -31,19 +31,21 @@
 
                         </header>
                         <div id="collapse2" class="body">
-                            <a asp-action="Index" asp-controller="Student">Students</a>
+                            <a asp-action="Index" asp-controller="Students">Students</a>
                             <form class="form-horizontal" id="popup-validation">
 
                                 <div class="form-group">
                                     <label class="control-label col-lg-4">First Name</label>
                                     <div class="col-lg-4">
                                         <input type="text" class="validate[required] form-control" name="req" id="req">
+                                        <span class="help-block">*Required</span>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-lg-4">Last Name</label>
                                     <div class="col-lg-4">
                                         <input type="text" class="validate[required] form-control" name="req" id="req">
+                                        <span class="help-block">*Required</span>
                                     </div>
                                 </div>
 
@@ -56,12 +58,14 @@
                                             <option value="option2">Academic Hold</option>
                                             <option value="option3">Graduated</option>
                                         </select>
+
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-lg-4">Major</label>
                                     <div class=" col-lg-4">
                                         <input type="text" class="validate[required] form-control" name="req" id="req">
+
                                     </div>
                                 </div>
 
@@ -71,6 +75,7 @@
                                     <div class=" col-lg-4">
                                         <input class="validate[required,custom[email]] form-control" type="text" name="email1"
                                                id="email1" />
+                                        <span class="help-block">*Required</span>
                                     </div>
                                 </div>
 
@@ -79,6 +84,7 @@
 
                                     <div class=" col-lg-4">
                                         <input class="validate[required] form-control" type="password" name="pass1" id="pass1" />
+
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -103,9 +109,9 @@
                                     <label class="control-label col-lg-4">State</label>
 
                                     <div class=" col-lg-4">
-                                        <input value="0123456789" class="validate[optional,maxSize[6]] form-control" type="text"
+                                        <input value="#" class="validate[optional,maxSize[6]] form-control" type="text"
                                                name="maxsize1" id="maxsize1" />
-                                        <span class="help-block">note that the field is optional - it won't fail if it has no value</span>
+                                        <span class="help-block"></span>
                                     </div>
                                 </div>
 
@@ -113,13 +119,14 @@
                                     <label class="control-label col-lg-4">Zip</label>
 
                                     <div class=" col-lg-4">
-                                        <input value="123456" class="validate[required,custom[number]] form-control" type="text"
+                                        <input value="#" class="validate[required,custom[number]] form-control" type="text"
                                                name="numbe2r" id="number2" />
-                                        <span class="help-block">6 Numbers</span>
+                                        <span class="help-block"></span>
                                     </div>
                                 </div>
                             </form>
                         </div>
+                        <a href="#" class="btn btn-metis-5 btn-rect">Submit</a>
                     </div>
                 </div>
                 <!-- /.col-lg-12 -->
