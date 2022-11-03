@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SAT.UI.MVC.Models;
 using System.Diagnostics;
 
@@ -13,11 +14,12 @@ namespace SAT.UI.MVC.Controllers
             _logger = logger;
         }
 
+        
         public IActionResult Index()
         {
             return View();
         }
-
+        
         public IActionResult Privacy()
         {
             return View();
@@ -28,16 +30,19 @@ namespace SAT.UI.MVC.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
+        
         public IActionResult Dashboard()
         {
             return View();
         }
+
+        [Authorize(Roles = "Admin")]
         public IActionResult Admin()
         {
             return View();
         }
 
+        [AllowAnonymous]
         public IActionResult ContactUs()
         {
             return View();
