@@ -4,62 +4,77 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Scheduled Classes</h2>
+
+
+
+
+<div class="col-lg-6 ui-sortable">
+    <div class="box ui-sortable-handle">
+        <header>
+
+            <div class="toolbar">
+                <div class="btn-group">
+                    <a href="#defaultTable" data-toggle="collapse" class="btn btn-sm btn-default minimize-box">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                    <a class="btn btn-danger btn-sm close-box">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <div id="defaultTable" class="body collapse in">
+            <table class="table responsive-table">
+                <thead style="color:black">
+                    <tr>
+                        <th>StartDate</th>
+                        <th>EndDate</th>
+                        <th>InstructorName</th>
+                        <th>Location</th>
+                        <th>Course</th>
+                        <th>Scs</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                @foreach (var item in Model)
+                {
+                    <tbody style="color:black">
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StartDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EndDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.InstructorName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Location)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Course.CourseName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Scs.Scsname)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.ScheduledClassId">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.ScheduledClassId">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.ScheduledClassId">Delete</a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-metis-6 btn-grad" data-original-title="" title="">Create Scheduled class</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.StartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EndDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.InstructorName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Location)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Course)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Scs)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.InstructorName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Course.CourseId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Scs.Scsid)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ScheduledClassId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ScheduledClassId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ScheduledClassId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>

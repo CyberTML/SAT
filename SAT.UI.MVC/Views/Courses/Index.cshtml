@@ -1,65 +1,80 @@
 ﻿@model IEnumerable<SAT.DATA.EF.Models.Course>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Courses";
 }
 
-<h2>Index</h2>
+<h2>Course</h2>
+
+<div class="col-lg-6 ui-sortable">
+    <div class="box ui-sortable-handle">
+        <header>
+            <h5>Default styles</h5>
+            <div class="toolbar">
+                <div class="btn-group">
+                    <a href="#defaultTable" data-toggle="collapse" class="btn btn-sm btn-default minimize-box">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                    <a class="btn btn-danger btn-sm close-box">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <div id="defaultTable" class="body collapse in">
+            <table class="table responsive-table">
+                <thead style="color:black">
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Course Description</th>
+                        <th>Credit Hours</th>
+                        <th>Curriculum</th>
+                        <th>Notes</th>
+                        <th>Is Active?</th>
+                    </tr>
+                </thead>
+
+                @foreach (var item in Model)
+                {
+
+
+                    <tbody style="color:black">
+                        <tr>
+                        <tr>
+                            <td>
+                                <a asp-action="Details" asp-route-id="@item.CourseId">
+                                        @Html.DisplayFor(modelItem => item.CourseName)
+                                </a>
+                            </td>
+                            <td>
+                                    @Html.DisplayFor(modelItem => item.CourseDescription)
+                            </td>
+                            <td>
+                                    @Html.DisplayFor(modelItem => item.CreditHours)
+                            </td>
+                            <td>
+                                    @Html.DisplayFor(modelItem => item.Curriculum)
+                            </td>
+                            <td>
+                                    @Html.DisplayFor(modelItem => item.Notes)
+                            </td>
+                            <td>
+                                    @Html.DisplayFor(modelItem => item.IsActive)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.CourseId">Edit</a> 
+                                <a asp-action="Details" asp-route-id="@item.CourseId">Details</a> 
+                                <a asp-action="Delete" asp-route-id="@item.CourseId">Delete</a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                }
+            </table>
+        </div>
+    </div>
+</div>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-metis-6 btn-grad" data-original-title="" title="">Create Course</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CourseName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CourseDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreditHours)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Curriculum)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Notes)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsActive)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreditHours)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Curriculum)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Notes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsActive)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CourseId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CourseId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CourseId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>

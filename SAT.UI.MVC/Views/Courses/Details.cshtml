@@ -5,49 +5,54 @@
 }
 
 <h2>Details</h2>
+<div class="col-lg-6 ui-sortable" style="color:black">
+    <div class="box ui-sortable-handle">
+        <header>
+            <div class="toolbar">
+                <div class="btn-group">
+                    <a href="#defaultTable" data-toggle="collapse" class="btn btn-sm btn-default minimize-box">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                    <a class="btn btn-danger btn-sm close-box">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
 
-<div>
-    <h4>Course</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.CourseName)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.CourseName)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.CourseDescription)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.CourseDescription)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.CreditHours)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.CreditHours)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Curriculum)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Curriculum)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Notes)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Notes)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.IsActive)
-        </dd>
-    </dl>
+          
+        </header>
+
+
+        <div id="defaultTable" class="body collapse in">
+            <table class="table responsive-table">
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>CourseDescription</th>
+                        <th>CreditHours</th>
+                        <th>Curriculum</th>
+                        <th>Notes</th>
+                        <th>IsActive</th>
+
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>@Html.DisplayFor(model => model.CourseName)</td>
+                        <td>@Html.DisplayFor(model => model.CourseDescription)</td>
+                        <td>@Html.DisplayFor(model => model.CreditHours)</td>
+                        <td>@Html.DisplayFor(model => model.Curriculum)</td>
+                        <td>@Html.DisplayFor(model => model.Notes)</td>
+                        <td>@Html.DisplayFor(model => model.IsActive)</td>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model.CourseId">Edit</a> |
     <a asp-action="Index">Back to List</a>
