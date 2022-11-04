@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using SAT.UI.MVC.Models;
+using SAT.DATA.EF.Models;
 
 namespace SAT.UI.MVC.Controllers
 {

@@ -4,25 +4,43 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>StudentStatus</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Ssname)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Ssname)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Ssdescription)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Ssdescription)
-        </dd>
-    </dl>
+
+<div class="col-lg-6 ui-sortable" style="color:black">
+    <div class="box ui-sortable-handle">
+        <header>
+
+            <div class="toolbar">
+                <div class="btn-group">
+                    <a href="#defaultTable" data-toggle="collapse" class="btn btn-sm btn-default minimize-box">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                    <a class="btn btn-danger btn-sm close-box">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div id="defaultTable" class="body collapse in">
+            <table class="table responsive-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>@Html.DisplayFor(model => model.Ssname)</td>
+                        <td>@Html.DisplayFor(model => model.Ssdescription)</td>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Ssid">Edit</a> |

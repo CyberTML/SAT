@@ -4,19 +4,37 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<div class="col-lg-6 ui-sortable" style="color:black">
+    <div class="box ui-sortable-handle">
+        <header>
 
-<div>
-    <h4>ScheduledClassStatus</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Scsname)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Scsname)
-        </dd>
-    </dl>
+            <div class="toolbar">
+                <div class="btn-group">
+                    <a href="#defaultTable" data-toggle="collapse" class="btn btn-sm btn-default minimize-box">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                    <a class="btn btn-danger btn-sm close-box">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div id="defaultTable" class="body collapse in">
+            <table class="table responsive-table">
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>@Html.DisplayFor(model => model.Scsname)</td>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Scsid">Edit</a> |
