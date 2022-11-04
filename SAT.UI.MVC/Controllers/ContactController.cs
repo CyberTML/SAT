@@ -2,11 +2,13 @@
 using MimeKit;
 using SAT.UI.MVC.Models;
 using MailKit.Net.Smtp;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SAT.UI.MVC.Controllers
 {
     public class ContactController : Controller
     {
+        
         public IActionResult Index()
         {
             return View();
@@ -25,6 +27,7 @@ namespace SAT.UI.MVC.Controllers
 
 
         [HttpPost]
+        
         public IActionResult Contact(ContactViewModel cvm)
         {
             if (!ModelState.IsValid)

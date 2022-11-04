@@ -172,15 +172,21 @@
                         <a href="@Url.Action("Dashboard", "Home")">
                             <i class="fa fa-dashboard"></i><span class="link-title">&nbsp;Dashboard</span>
                         </a>
+                    </li>
+                    <li class="">
                         <a href="@Url.Action("Admin", "Home")">
                             <i class="fa fa-lock"></i><span class="link-title"> Admin</span>
                         </a>
-                        <a href="@Url.Action("ContactUs", "Home")">
-                            <i class="fa fa-lock"></i><span class="link-title"> Contact Us</span>
-                        </a>
                     </li>
                     <li class="">
+                        <a href="@Url.Action("ContactUs", "Home")">
+                            <i class="fa fa-lock"></i><span class="link-title"> Contact Us</span>
+                        </a>                        
+                    </li>
+                    <partial name="_LoginPartial" />
+                    <li class="">
                 </ul>
+                
                       <!-- Menu End -->
             </div>
             <!-- /#left -->
@@ -250,7 +256,10 @@
                         </script>
 
             <script src="~/assets/js/style-switcher.js"></script>
+
             @RenderSection("Scripts", false )
+
+
             </body>
         
 
