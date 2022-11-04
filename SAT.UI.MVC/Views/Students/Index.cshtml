@@ -48,11 +48,13 @@
                         <tr>
                             <td>
                                 <a asp-action="Details" asp-route-id="@item.StudentId">
-                                @Html.DisplayFor(modelItem => item.FirstName)</a> 
+                                    @Html.DisplayFor(modelItem => item.FirstName)
+                                </a>
                             </td>
                             <td>
-                                 <a asp-action="Details" asp-route-id="@item.StudentId">
-                                @Html.DisplayFor(modelItem => item.LastName)</a>
+                                <a asp-action="Details" asp-route-id="@item.StudentId">
+                                    @Html.DisplayFor(modelItem => item.LastName)
+                                </a>
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Major)
@@ -79,9 +81,13 @@
                                 @Html.DisplayFor(modelItem => item.Ss.Ssname)
                             </td>
                             <td>
-                                <a asp-action="Edit" asp-route-id="@item.StudentId">Edit</a> 
-                                <a asp-action="Details" asp-route-id="@item.StudentId">Details</a> 
-                                <a asp-action="Delete" asp-route-id="@item.StudentId">Delete</a>
+                                <a asp-action="Details" asp-route-id="@item.StudentId">Details</a>
+                                @if (User.IsInRole("Admin"))
+                                {
+                                    <a asp-action="Edit" asp-route-id="@item.StudentId">Edit</a>
+
+                                    <a asp-action="Delete" asp-route-id="@item.StudentId">Delete</a>
+                                }
                             </td>
                         </tr>
 
@@ -91,7 +97,9 @@
         </div>
     </div>
 </div>
-
-<p>
-    <a asp-action="Create" class="btn btn-metis-6 btn-grad" data-original-title="" title="">Create Student</a>
-</p>
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-action="Create" class="btn btn-metis-6 btn-grad" data-original-title="" title="">Create Student</a>
+    </p>
+}

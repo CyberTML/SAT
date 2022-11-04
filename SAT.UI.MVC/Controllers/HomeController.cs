@@ -36,7 +36,7 @@ namespace SAT.UI.MVC.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Scheduling")]
         public IActionResult Admin()
         {
             return View();
